@@ -9,6 +9,7 @@ source("cachematrix.R")
 
 context("Caching the inverse of a matrix")
 
+# A sample 2x2 matrix and its inverse.
 x <- matrix(c(4, 3, 3, 2), ncol = 2)
 x_inv <- matrix(c(-2, 3, 3, -4), ncol = 2)
 
