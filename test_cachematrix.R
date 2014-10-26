@@ -27,3 +27,15 @@ test_that("makeCacheMatrix can cache its inverse", {
     cache_matrix$set(t(x))
     expect_that(cache_matrix$getInverse(), is_null())
 })
+
+test_that("cacheSolve computes the inverse", {
+    cache_matrix <- makeCacheMatrix(x)
+    expect_that(cacheSolve(cache_matrix), equals(x_inv))
+})
+
+test_that("cacheSolve can cache the inverse", {
+    cache_matrix <- makeCacheMatrix(x)
+    expect_that(cacheSolve(cache_matrix), shows_message("computing matrix inverse"))
+    expect_that(cacheSolve(cache_matrix), shows_message("returning cached inverse"))
+    expect_that(cacheSolve(cache_matrix), equals(x_inv))
+})
