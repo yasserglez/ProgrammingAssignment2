@@ -1,4 +1,8 @@
 
+# Test the implementation of makeCacheMatrix and cacheSolve. In order to run
+# the tests you must install the testthat package (at least version 0.9.1)
+# available at cran.r-project.org/package=testthat.
+
 library("testthat")
 
 source("cachematrix.R")
